@@ -324,13 +324,28 @@ Some shell scripts are present in the **/experiments** folder. They launch train
 
 # Some qualitative results
 
+Using the present model with an unfrozen backbone and a refiner trained on 30 epochs (see /train_val_test for Bash files detailling our experiments), we obtain results coherent with the ground-truth data, albeit not as detailed and "grainy".
+
 ![Small scale test](https://github.com/thomas-dujardin/AGB_Amazon_TUM/blob/main/assets/small_scale_test.png?raw=true)
+
+This is the first step in the scaling of such a model.
 
 ## Current limitations
 
-- GEDI LiDAR is not currently used as an input modality. Could be implemented from scratch by correctly fusing the embeddings and the GEDI LiDAR data.
-- The target biomass map is not a true 10 m pixelwise label; it has coarser effective spatial support.
-- The current implementation requires access to private Google Earth Engine assets.
-- The current model is trained on a small number of Amazon Basin tiles.
-- Edge artifacts in GT tiles.
-- Currently, single-GPU only.
+- GEDI LiDAR cannot currently be used as an input modality. This could be implemented from scratch by correctly fusing the embedding(s) from CFM-v1 and the GEDI LiDAR data, through, for instance:
+  
+        -   Cross-modal attention;
+        -   Intermittent contrastive learning;
+        -   Inception-V3 style auxiliary loss function penalizing inputs that ignore the information contained in LiDAR data, by having the input perform an auxiliary downstream task, thus starting gradient propagation from a "new branch" that is closer to CFM-v1.
+
+- In a similar fashion, CFM-V1 cannot take non-spectral and spectral information at the same time: cross-modal attention or even a simple network that combines both embeddings in linear and non-linear ways. For instance:
+        - Hadamard product, concatenation and reduction via an MLP
+        - a combination of several methods then stacked together and collapsed into an embedding (cf. InceptionV3), and, more generally any method capable of fusing two 768-dimensional vectors in the least destructive way possible (in the information theoretic sense of the term);
+
+- The current dataset is far too small to perform inference at a larger scale, and to study OOD generalization. A decent dataset should ideally contain:
+        - Random tiles clusters (often but not necessarily connected) all across the Amazon basin;
+        - A "testable" diversity in terms of scenarii for AGB detection and OOD generalization studying;
+        - More metadata, at a finer scale. The ESA CCI AGB dataset only proposes yearly GT measures. The bands of Sentinel-1 and Sentinel-2 we have possess a resolution of 10x10m (20x20m for B11 and B12, known as SWIR, but both are upsampled to 10x10m).
+        - The native resolution of 264x264 pixels for each channel of each input is not suitable for CFM-v1's ViT-B/16 and 10x10m. 320x320m (320px is a multiple of both 16 and 10) would fit better, even if trivially interpolated, as long as the positional-embedding grid of the ViT is suitably sized.
+
+- As of 23/06/2026, the model is single-GPU only.
