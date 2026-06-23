@@ -14,9 +14,15 @@ As the Grant Agreement stipulates:
 
 > <p align="center">For UC2b, we will estimate AGB and assess forest carbon stock at fine spatial resolution and large geographic coverage using DL. To achieve this, we will utilize GEDI LiDAR data fused with S1&S2, elevation, meteo and land cover data for the Amazon basin. We will also model the amount of sequestered carbon and its year-to-year dynamics, as well as the performance of forests in carbon sinks for any location, country, or specific carbon REDD+ project areas. All DL models will incorporate xAI, and we will thoroughly evaluate the generalization of methods.</p>
 
+This simple diagram synthetizes the project:
+
+![diagram](https://github.com/thomas-dujardin/biomass_density_ESA/blob/main/assets/40022be4-3094-4418-a5ff-81759ca7f94e.png?raw=true)
+
+TUM's intervention is the limited to the first three steps of Use Case 2b.
+
 ## Current study area
 
-For out-of-distribution generalization studies, as well as initial performance and speed testing, the current model is trained on a small area near Manaus rather than on the entire Amazon basin.
+A toy model was trained on a small set of adjacent tiles around and in the town of Manaus, Brazil. The scale is illustrated by the inclusion of the toybox's ROI (Manaus, in yellow) inside the target ROI (the Amazon basin, in green). This is done to test regression/dense classification abilities, our design's initial performances in scarce scenarii, and ablations/modifications of our design.
 
 ![Study area near Manaus](https://github.com/thomas-dujardin/biomass_density_ESA/blob/main/assets/tiles.png?raw=true)
 
@@ -318,7 +324,7 @@ Some shell scripts are present in the **/experiments** folder. They launch train
 
 # Some qualitative results
 
-**To be done**
+
 
 ## Current limitations
 
