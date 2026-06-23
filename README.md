@@ -34,7 +34,7 @@ This repository currently estimates biomass density only within the area shown a
 
 The current implementation uses a slightly modified version of the pretrained [Copernicus-FM v1](https://github.com/zhu-xlab/Copernicus-FM) multimodal foundation model, followed by task-specific regression components.
 
-The model predicts ESA CCI Above-Ground Biomass maps at the target resolution.
+The model predicts ESA CCI Above-Ground Biomass maps at the target resolution (32x32px, range outside of grayscale, possible invalid values).
 
 ![Biomass density estimation approach](https://github.com/thomas-dujardin/AGB_Amazon_TUM/blob/main/assets/simplified_version_improved.png?raw=true)
 
