@@ -18,7 +18,7 @@ This simple diagram synthetizes the project:
 
 ![diagram](https://github.com/thomas-dujardin/AGB_Amazon_TUM/blob/main/assets/40022be4-3094-4418-a5ff-81759ca7f94e.png?raw=true)
 
-TUM's intervention is the limited to the first three steps of Use Case 2b.
+TUM's intervention is limited to the first three steps of Use Case 2b.
 
 ## Current study area
 
