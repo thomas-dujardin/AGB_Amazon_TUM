@@ -1,0 +1,78 @@
+{
+  "tile_id": 347,
+  "input_band_names": [
+    "VV",
+    "VH",
+    "B02",
+    "B03",
+    "B04",
+    "B08",
+    "B11",
+    "B12"
+  ],
+  "target_band_names": [
+    "AGB",
+    "SD",
+    "valid_mask"
+  ],
+  "x_shape": [
+    8,
+    320,
+    320
+  ],
+  "y_shape": [
+    1,
+    32,
+    32
+  ],
+  "sd_shape": [
+    1,
+    32,
+    32
+  ],
+  "valid_mask_shape": [
+    1,
+    32,
+    32
+  ],
+  "input_crs": "EPSG:3857",
+  "target_crs": "EPSG:3857",
+  "input_transform": [
+    10.0,
+    0.0,
+    -6694400.0,
+    0.0,
+    -10.0,
+    -265600.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "target_transform": [
+    100.0,
+    0.0,
+    -6694400.0,
+    0.0,
+    -100.0,
+    -265600.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "input_bounds": [
+    -6694400.0,
+    -268800.0,
+    -6691200.0,
+    -265600.0
+  ],
+  "target_bounds": [
+    -6694400.0,
+    -268800.0,
+    -6691200.0,
+    -265600.0
+  ],
+  "centroid_lon": -60.12244533555133,
+  "centroid_lat": -2.399596646674814,
+  "input_resolution_m": 10,
+  "target_resolution_m": 100
+}

@@ -1,0 +1,13 @@
+torch
+torchvision
+numpy
+tqdm
+tensorboard
+huggingface_hub
+rasterio
+scikit-learn
+matplotlib
+timm
+einops
+kornia
+webdataset

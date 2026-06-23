@@ -1,0 +1,284 @@
+{
+  "num_tiles": 10,
+  "tile_ids": [
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369
+  ],
+  "input_dir": "biomass_tiles_320_annual_agb_sd_corrected",
+  "output_dir": "biomass_tiles_320_pt",
+  "input_bands": [
+    "VV",
+    "VH",
+    "B02",
+    "B03",
+    "B04",
+    "B08",
+    "B11",
+    "B12"
+  ],
+  "target_bands": [
+    "AGB",
+    "SD",
+    "valid_mask"
+  ],
+  "expected_x_shape": [
+    8,
+    320,
+    320
+  ],
+  "expected_y_shape": [
+    1,
+    32,
+    32
+  ],
+  "expected_sd_shape": [
+    1,
+    32,
+    32
+  ],
+  "expected_valid_mask_shape": [
+    1,
+    32,
+    32
+  ],
+  "tiles": [
+    {
+      "tile_id": 360,
+      "x_shape": [
+        8,
+        320,
+        320
+      ],
+      "y_shape": [
+        1,
+        32,
+        32
+      ],
+      "sd_shape": [
+        1,
+        32,
+        32
+      ],
+      "valid_pixels": 1024,
+      "agb_min": 113.0,
+      "agb_max": 461.0,
+      "agb_mean": 285.943359375,
+      "sd_mean": 138.0146484375
+    },
+    {
+      "tile_id": 361,
+      "x_shape": [
+        8,
+        320,
+        320
+      ],
+      "y_shape": [
+        1,
+        32,
+        32
+      ],
+      "sd_shape": [
+        1,
+        32,
+        32
+      ],
+      "valid_pixels": 1024,
+      "agb_min": 80.0,
+      "agb_max": 464.0,
+      "agb_mean": 275.451171875,
+      "sd_mean": 132.9853515625
+    },
+    {
+      "tile_id": 362,
+      "x_shape": [
+        8,
+        320,
+        320
+      ],
+      "y_shape": [
+        1,
+        32,
+        32
+      ],
+      "sd_shape": [
+        1,
+        32,
+        32
+      ],
+      "valid_pixels": 1024,
+      "agb_min": 68.0,
+      "agb_max": 442.0,
+      "agb_mean": 276.0625,
+      "sd_mean": 133.353515625
+    },
+    {
+      "tile_id": 363,
+      "x_shape": [
+        8,
+        320,
+        320
+      ],
+      "y_shape": [
+        1,
+        32,
+        32
+      ],
+      "sd_shape": [
+        1,
+        32,
+        32
+      ],
+      "valid_pixels": 1024,
+      "agb_min": 81.0,
+      "agb_max": 448.0,
+      "agb_mean": 285.73828125,
+      "sd_mean": 138.11328125
+    },
+    {
+      "tile_id": 364,
+      "x_shape": [
+        8,
+        320,
+        320
+      ],
+      "y_shape": [
+        1,
+        32,
+        32
+      ],
+      "sd_shape": [
+        1,
+        32,
+        32
+      ],
+      "valid_pixels": 1023,
+      "agb_min": 23.0,
+      "agb_max": 429.0,
+      "agb_mean": 277.5425109863281,
+      "sd_mean": 134.22776794433594
+    },
+    {
+      "tile_id": 365,
+      "x_shape": [
+        8,
+        320,
+        320
+      ],
+      "y_shape": [
+        1,
+        32,
+        32
+      ],
+      "sd_shape": [
+        1,
+        32,
+        32
+      ],
+      "valid_pixels": 1011,
+      "agb_min": 11.0,
+      "agb_max": 452.0,
+      "agb_mean": 261.13055419921875,
+      "sd_mean": 126.2868423461914
+    },
+    {
+      "tile_id": 366,
+      "x_shape": [
+        8,
+        320,
+        320
+      ],
+      "y_shape": [
+        1,
+        32,
+        32
+      ],
+      "sd_shape": [
+        1,
+        32,
+        32
+      ],
+      "valid_pixels": 1021,
+      "agb_min": 1.0,
+      "agb_max": 439.0,
+      "agb_mean": 267.8002014160156,
+      "sd_mean": 129.59255981445312
+    },
+    {
+      "tile_id": 367,
+      "x_shape": [
+        8,
+        320,
+        320
+      ],
+      "y_shape": [
+        1,
+        32,
+        32
+      ],
+      "sd_shape": [
+        1,
+        32,
+        32
+      ],
+      "valid_pixels": 1024,
+      "agb_min": 19.0,
+      "agb_max": 439.0,
+      "agb_mean": 269.970703125,
+      "sd_mean": 130.6982421875
+    },
+    {
+      "tile_id": 368,
+      "x_shape": [
+        8,
+        320,
+        320
+      ],
+      "y_shape": [
+        1,
+        32,
+        32
+      ],
+      "sd_shape": [
+        1,
+        32,
+        32
+      ],
+      "valid_pixels": 1024,
+      "agb_min": 39.0,
+      "agb_max": 434.0,
+      "agb_mean": 259.8984375,
+      "sd_mean": 125.865234375
+    },
+    {
+      "tile_id": 369,
+      "x_shape": [
+        8,
+        320,
+        320
+      ],
+      "y_shape": [
+        1,
+        32,
+        32
+      ],
+      "sd_shape": [
+        1,
+        32,
+        32
+      ],
+      "valid_pixels": 1024,
+      "agb_min": 75.0,
+      "agb_max": 427.0,
+      "agb_mean": 274.2353515625,
+      "sd_mean": 132.873046875
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "biomass-density-esa"
+version = "0.1.0"
+description = "Copernicus-FM based above-ground biomass density estimation over the Amazon Basin."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Thomas Dujardin" }
+]
+dependencies = [
+    "torch",
+    "torchvision",
+    "numpy",
+    "tqdm",
+    "tensorboard",
+    "huggingface_hub",
+    "rasterio",
+    "scikit-learn",
+    "matplotlib",
+    "timm",
+    "einops",
+    "kornia",
+    "webdataset"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+    "biomass*",
+    "scripts*",
+    "src*"
+]
+
+[project.scripts]
+biomass-train = "scripts.train_eval:main"
+biomass-infer = "infer:run_inference"

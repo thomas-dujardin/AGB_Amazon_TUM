@@ -1,0 +1,3 @@
+[console_scripts]
+biomass-infer = infer:run_inference
+biomass-train = scripts.train_eval:main
