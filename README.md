@@ -231,8 +231,6 @@ python infer_biomass.py \
 
 ## Experimental results:
 
-## Results
-
 Some shell scripts are present in the **/experiments** folder. They launch training or inference with various hyperparameters.
 
 **/train_val_infer** contain the best set of hyperparameters for training and inference. They should be used for inference on unseen data, as they use the best trained model available.
@@ -309,7 +307,7 @@ Some shell scripts are present in the **/experiments** folder. They launch train
 
 5 runs on 5 different seeds, same parameters as above, but **Laplacian penalty added to L1 loss**:
 
-
+**To be done**
 
 5 runs on 5 different seeds, same parameters as above, but **simple L1 loss**:
 
@@ -333,13 +331,7 @@ Some shell scripts are present in the **/experiments** folder. They launch train
 
 # Some qualitative results
 
-
-
-| Setting | Encoder | Refiner | Loss | RMSE | MAE | Notes |
-|---|---|---|---|---:|---:|---|
-| baseline | frozen Copernicus-FM | off | L1 | TBD | TBD | coarse target |
-| + refiner | frozen Copernicus-FM | UResNet34 | L1 + Laplacian | TBD | TBD | slower |
-| random encoder | random ViT-B | off | L1 | TBD | TBD | ablation |
+**To be done**
 
 ## Current limitations
 
