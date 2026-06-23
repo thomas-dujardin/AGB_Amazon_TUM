@@ -233,6 +233,108 @@ python infer_biomass.py \
 
 ## Results
 
+Some shell scripts are present in the **/experiments** folder. They launch training or inference with various hyperparameters.
+
+**/train_val_infer** contain the best set of hyperparameters for training and inference. They should be used for inference on unseen data, as they use the best trained model available.
+
+# log1p transform ablation
+
+5 runs on 5 different seeds, ran with **experiments/repeated_spatial_blocks_for_UQ.sh**. No refiner, frozen CFM-v1 backbone. **Uses log1p transform**:
+
+| Metric |          Mean ± SD |
+| ------ | -----------------: |
+| MAE    | 59.28 ± 3.75 Mg/ha |
+| RMSE   | 74.73 ± 4.30 Mg/ha |
+| Bias   |  1.56 ± 8.94 Mg/ha |
+
+5 runs on 5 different seeds, no log1p transform to the AGB, frozen CFM-v1 and no refiner:
+
+| Metric |          Mean ± SD |
+| ------ | -----------------: |
+| MAE    | 59.56 ± 3.61 Mg/ha |
+| RMSE   | 75.16 ± 3.99 Mg/ha |
+| Bias   |  1.55 ± 9.73 Mg/ha |
+
+# CFM-v1 initialization ablation study
+
+5 runs on 5 different seeds, log1p on, pretrained CFM-v1 finetuned, refiner activated ("maximal" config):
+
+| Metric |          Mean ± SD |
+| ------ | -----------------: |
+| MAE    | 53.89 ± 3.60 Mg/ha |
+| RMSE   | 67.21 ± 4.12 Mg/ha |
+| Bias   | −2.04 ± 8.56 Mg/ha |
+
+5 runs on 5 different seeds, CFM-v1 randomly initialized but finetuned, "maximal" config on (refiner, log1p, training the randomly initialized CFM-v1):
+
+| Metric |           Mean ± SD |
+| ------ | ------------------: |
+| MAE    |  53.61 ± 2.75 Mg/ha |
+| RMSE   |  66.76 ± 3.32 Mg/ha |
+| Bias   | −1.39 ± 12.47 Mg/ha |
+
+# CFM-v1 with SD-based losses ablation study
+
+5 runs on 5 different seeds, CFM-v1 frozen, no refiner, log1p and **SD_weighted_L1_loss instead of L1**:
+
+| Metric |          Mean ± SD |
+| ------ | -----------------: |
+| MAE    | 59.49 ± 2.86 Mg/ha |
+| RMSE   | 75.02 ± 3.11 Mg/ha |
+| Bias   |  2.72 ± 9.32 Mg/ha |
+
+5 runs on 5 different seeds, same parameters as above, but **simple unweighted L1 loss**:
+
+| Metric |          Mean ± SD |
+| ------ | -----------------: |
+| MAE    | 59.47 ± 3.26 Mg/ha |
+| RMSE   | 75.06 ± 3.53 Mg/ha |
+| Bias   |  2.44 ± 9.69 Mg/ha |
+
+5 runs on 5 different seeds, same parameters as above, but **SD_weighted_MSE_loss**:
+
+| Metric |            Mean ± SD |
+| ------ | -------------------: |
+| MAE    |   59.94 ± 4.16 Mg/ha |
+| RMSE   |   74.78 ± 4.89 Mg/ha |
+| Bias   | −12.56 ± 12.13 Mg/ha |
+
+5 runs on 5 different seeds, same parameters as above, but **unweighted_MSE_loss**:
+
+| Metric |          Mean ± SD |
+| ------ | -----------------: |
+| MAE    | 59.15 ± 4.74 Mg/ha |
+| RMSE   | 73.77 ± 5.38 Mg/ha |
+| Bias   | −9.41 ± 8.75 Mg/ha |
+
+5 runs on 5 different seeds, same parameters as above, but **Laplacian penalty added to L1 loss**:
+
+
+
+5 runs on 5 different seeds, same parameters as above, but **simple L1 loss**:
+
+# CFM-v1 with and without refiner ablation study
+
+5 runs on 5 different seeds, CFM-v1 frozen, **refiner activated**, L1 loss, log1p:
+
+| Metric |          Mean ± SD |
+| ------ | -----------------: |
+| MAE    | 58.83 ± 3.88 Mg/ha |
+| RMSE   | 74.14 ± 4.13 Mg/ha |
+| Bias   | 3.12 ± 13.33 Mg/ha |
+
+5 runs on 5 different seeds, CFM-v1 frozen, **refiner removed**, L1 loss, log1p:
+
+| Metric |          Mean ± SD |
+| ------ | -----------------: |
+| MAE    | 59.54 ± 3.69 Mg/ha |
+| RMSE   | 74.97 ± 4.06 Mg/ha |
+| Bias   | 1.27 ± 10.13 Mg/ha |
+
+# Some qualitative results
+
+
+
 | Setting | Encoder | Refiner | Loss | RMSE | MAE | Notes |
 |---|---|---|---|---:|---:|---|
 | baseline | frozen Copernicus-FM | off | L1 | TBD | TBD | coarse target |
