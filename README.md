@@ -339,10 +339,12 @@ This is the first step in the scaling of such a model.
         -   Inception-V3 style auxiliary loss function penalizing inputs that ignore the information contained in LiDAR data, by having the input perform an auxiliary downstream task, thus starting gradient propagation from a "new branch" that is closer to CFM-v1.
 
 - In a similar fashion, CFM-V1 cannot take non-spectral and spectral information at the same time: cross-modal attention or even a simple network that combines both embeddings in linear and non-linear ways. For instance:
+  
         - Hadamard product, concatenation and reduction via an MLP
         - a combination of several methods then stacked together and collapsed into an embedding (cf. InceptionV3), and, more generally any method capable of fusing two 768-dimensional vectors in the least destructive way possible (in the information theoretic sense of the term);
 
 - The current dataset is far too small to perform inference at a larger scale, and to study OOD generalization. A decent dataset should ideally contain:
+  
         - Random tiles clusters (often but not necessarily connected) all across the Amazon basin;
         - A "testable" diversity in terms of scenarii for AGB detection and OOD generalization studying;
         - More metadata, at a finer scale. The ESA CCI AGB dataset only proposes yearly GT measures. The bands of Sentinel-1 and Sentinel-2 we have possess a resolution of 10x10m (20x20m for B11 and B12, known as SWIR, but both are upsampled to 10x10m).
