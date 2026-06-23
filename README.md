@@ -196,38 +196,23 @@ MAE, RMSE, and bias are then computed on the raw `32 × 32` AGB maps, using only
 
 ## Installation
 
-run (...)
+**Simply run:**
 
 conda create -n biomass python=3.11
 conda activate biomass
 pip install -r requirements.txt
 
 ## Minimal command, experiment examples, inference
-- ### Runs the model with the random seed and hyperparameters we've used, on the same data split. The Copernicus-FM v1 encoder is frozen, and the refiner is turned off;
-  python biomass_density.py --use_gpu --nr_epochs 20 --train_batch_size 4
 
-- ### Frozen Copernicus-FM encoder, train decoder/refiner
-  python biomass_density.py
-  
-- ### Train all components
-  python biomass_density.py --train_everything
-
-- ### Randomly initialize Copernicus-FM
-  python biomass_density.py --random_init_copernicus
-
-- ### Disable refiner
-  python biomass_density.py --no-refiner_on
-
-These arguments can be combined.
+The /train_val_infer folder contains Shell scripts (.sh format) executable via ''bash name.sh'' on a suitable CLI or tool.
+Hyperparameters can be modified there.
 
 ## Inference
 
 Run:
 
-python infer_biomass.py \
-  --input_tensor data/cache/tile_000123/x.pt \
-  --biomass_checkpoint checkpoints/biomass_best.pt \
-  --out_dir data/predictions/tile_000123
+''bash train_val_infer/infer_all_tiles.sh'' runs inference on all test split tiles;
+''bash train_val_infer/infer_and_viz_1_tile.sh'' runs inference on a random tile, for a given checkpoint (.ckpt format)
 
 ## Experimental results:
 
