@@ -16,7 +16,7 @@ As the Grant Agreement stipulates:
 
 This simple diagram synthetizes the project:
 
-![diagram](https://github.com/thomas-dujardin/biomass_density_ESA/blob/main/assets/40022be4-3094-4418-a5ff-81759ca7f94e.png?raw=true)
+![diagram](https://github.com/thomas-dujardin/AGB_Amazon_TUM/blob/main/assets/40022be4-3094-4418-a5ff-81759ca7f94e.png?raw=true)
 
 TUM's intervention is the limited to the first three steps of Use Case 2b.
 
@@ -24,7 +24,7 @@ TUM's intervention is the limited to the first three steps of Use Case 2b.
 
 A toy model was trained on a small set of adjacent tiles around and in the town of Manaus, Brazil. The scale is illustrated by the inclusion of the toybox's ROI (Manaus, in yellow) inside the target ROI (the Amazon basin, in green). This is done to test regression/dense classification abilities, our design's initial performances in scarce scenarii, and ablations/modifications of our design.
 
-![Study area near Manaus](https://github.com/thomas-dujardin/biomass_density_ESA/blob/main/assets/tiles.png?raw=true)
+![Study area near Manaus](https://github.com/thomas-dujardin/AGB_Amazon_TUM/blob/main/assets/tiles.png?raw=true)
 
 The current dataset contains **384 complete tiles**. Each tile covers approximately `3.2 km × 3.2 km`.
 
@@ -36,7 +36,7 @@ The current implementation uses a slightly modified version of the pretrained [C
 
 The model predicts ESA CCI Above-Ground Biomass maps at the target resolution.
 
-![Biomass density estimation approach](https://github.com/thomas-dujardin/biomass_density_ESA/blob/main/assets/simplified_version_improved.png?raw=true)
+![Biomass density estimation approach](https://github.com/thomas-dujardin/AGB_Amazon_TUM/blob/main/assets/simplified_version_improved.png?raw=true)
 
 Copernicus-FM v1 is used because it can jointly process heterogeneous Sentinel-1 SAR and Sentinel-2 optical observations.
 
@@ -196,7 +196,7 @@ MAE, RMSE, and bias are then computed on the raw `32 × 32` AGB maps, using only
 
 ## Model Overview
 
-![biomass density estimation diagram](https://github.com/thomas-dujardin/biomass_density_ESA/blob/main/assets/biomass_redone.png?raw=true)
+![biomass density estimation diagram](https://github.com/thomas-dujardin/AGB_Amazon_TUM/blob/main/assets/biomass_redone.png?raw=true)
 
 <p align="left"> The original Copernicus-FM ViT uses a `[CLS]` token for global image representation. In this repository, `src/model_vit.py` is modified so that the model returns the spatial patch tokens instead. These tokens are reshaped into a 20 × 20 features grid before being decoded into an AGB map.</p>
 
@@ -324,7 +324,7 @@ Some shell scripts are present in the **/experiments** folder. They launch train
 
 # Some qualitative results
 
-
+![Small scale test](https://github.com/thomas-dujardin/AGB_Amazon_TUM/blob/main/assets/small_scale_test.png?raw=true)
 
 ## Current limitations
 
