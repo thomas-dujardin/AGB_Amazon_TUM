@@ -196,18 +196,18 @@ MAE, RMSE, and bias are then computed on the raw `32 × 32` AGB maps, using only
 
 ## Installation
 
-```
 **Simply run:**
 
+```
 conda create -n biomass python=3.11
 conda activate biomass
 pip install -r requirements.txt
+```
 
 ## Minimal command, experiment examples, inference
 
 The /train_val_infer folder contains Shell scripts (.sh format) executable via ''bash name.sh'' on a suitable CLI or tool.
 Hyperparameters can be modified there.
-```
 
 ## Inference
 
